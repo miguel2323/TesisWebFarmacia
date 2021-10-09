@@ -1,28 +1,6 @@
 @php
-$nav_links=[
 
-  [
-'name'=>'home',
-    'route'=>route('home'),
-    'active'=>request()->routeIs('home')
-],
-[
-  'name'=> 'Listas de Medicina',
-  'route'=>'#',
-    'active'=>false
-],
-    [
-    'name'=> 'Cargar Medicinas',
-    'route'=>'#',
-        'active'=>false
-     ],
-        [
-            'name'=> 'Editar Medicinas',
-            'route'=>'#',
-                'active'=>false
-            ],
-                                 
-];               
+
 @endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
    
@@ -274,7 +252,7 @@ $nav_links=[
             <div class="py-1 border-t border-gray-200" style="color: #a4e62a" >
 
             <x-jet-responsive-nav-link href="{{route('login')}}" :active="request()->routeIs('login')">
-               Login
+               Loginkkkkkkkkkkkkk
             </x-jet-responsive-nav-link>
 
 

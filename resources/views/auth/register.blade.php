@@ -11,13 +11,13 @@
           <div class="card-header card-header-primary text-center">
             <h4 class="card-title"><strong>{{ __('Register') }}</strong></h4>
             <div class="social-line">
-              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+              <a href="#" class="btn btn-just-icon btn-link btn-white">
                 <i class="fa fa-facebook-square"></i>
               </a>
-              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+              <a href="#" class="btn btn-just-icon btn-link btn-white">
                 <i class="fa fa-twitter"></i>
               </a>
-              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+              <a href="#" class="btn btn-just-icon btn-link btn-white">
                 <i class="fa fa-google-plus"></i>
               </a>
             </div>
@@ -32,7 +32,7 @@
                   </span>
                 </div>
                 <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" 
-                value="{{ old('name') }}" required  autocomplete="name" autofocus>
+                        value="{{ old('name') }}" required autocomplete="name" autofocus>
               </div>
               @if ($errors->has('name'))
                 <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
@@ -40,6 +40,26 @@
                 </div>
               @endif
             </div>
+                      <!--USERMANE-->
+
+                    <div class="bmd-form-group{{ $errors->has('username') ? ' has-danger' : '' }} mt-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                              <i class="material-icons">fingerprint</i>
+                          </span>
+                        </div>
+                        <input type="text" name="username" class="form-control" placeholder="{{ __('username...') }}" 
+                                value="{{ old('username') }}" required autocomplete="username">
+                      </div>
+                      @if ($errors->has('username'))
+                        <div id="username-error" class="error text-danger pl-3" for="username" style="display: block;">
+                          <strong>{{ $errors->first('username') }}</strong>
+                        </div>
+                      @endif
+                    </div> <!--fin username-->
+
+
             <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -88,9 +108,10 @@
                 </div>
               @endif
             </div>
-            <div class="form-check mr-auto ml-3 mt-3">
+
+       {{--    <div class="form-check mr-auto ml-3 mt-3">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" id="policy" name="policy" {{ old('policy', 1) ? 'checked' : '' }} >
+                <input class="form-check-input" type="checkbox" id="policy" name="policy" {{ old('policy', 1) ? 'checked' : 'true' }} >
                 <span class="form-check-sign">
                   <span class="check"></span>
                 </span>
@@ -98,10 +119,49 @@
               </label>
             </div>
           </div>
-          <div class="card-footer justify-content-center">
-            <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Create account') }}</button>
+                
+       <div class="card-footer justify-content-center">
+         <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Create account') }}</button>
+        
           </div>
+        </div>--}}
+
+        @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+        <div class="form-check mr-auto ml-3 mt-3">
+             <label class="form-check-label">
+                <div class="flex items-center"> <br>
+              <div class="ml-3" >
+                   <x-jet-checkbox name="terms" id="terms"/>
+                        {!! __('I agree to the :terms_of_service and :privacy_policy checked: true', [
+                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
+                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                        ]) !!}
+                    </div> 
+                
+                </div>
+            </label>
         </div>
+    @endif
+
+    <div class="flex items-center justify-end mt-3">
+        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+            {{ __('Already registered?') }}
+        </a>
+        <div class="card-footer justify-content-center">
+        <button type="submit" class="btn btn-primary btn-link btn-lg">{{ __('Create account') }}</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
       </form>
     </div>
   </div>

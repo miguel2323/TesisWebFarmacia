@@ -17,3 +17,4 @@ Route::delete('productos/{producto}',[ProductController::class,'destroy'])->name
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+ 

@@ -77,11 +77,4 @@ class ProductController extends Controller
         
  }
  
- /*
- public function Nosotros(Medicina $articulo)
- {
-     return view('nosotros',compact('articulo'));
- }
- */
- 
  }
