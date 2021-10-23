@@ -1,6 +1,11 @@
 <nav class="bg-gray-800" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
+        
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/bootstrap.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/font-awesome.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/helper.min.css">
+        
 
            <!-- Mobile menu button-->
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -35,9 +40,7 @@
             <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
             <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
             </a>
-           
-
-          {{--Menu lg--}}
+   {{--Menu lg--}}
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">  
               <ul class="nav">
@@ -68,8 +71,12 @@
             <img class="h-8 w-8 rounded-full"src="{{auth()->user()->profile_photo_url}}" alt="">
             </button>
           </div>
-
-         <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+             {{-- aqui modifice el menu
+               <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-0
+               mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+              --}}
+        
+        <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-180 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
          <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Tu Perfil</a>
          @can('admin.home')
@@ -117,18 +124,24 @@
 </nav>
 
 <style type="text/css">
-  ul,ol{
-
+ ul,ol{
+background-color: #4567;
+color: #ffffff;
+border: none;
+padding: 16px;
+font-size: 18.5px;
     list-style: none;
   }
+
 .nav li a {
- background-color: #290adb;
+
+background-color: #4567;
+  padding: 16px;
   color: #ffffff;
   text-decoration:none;
 }
-
 .nav li a:hover{
-  background-color: #0f0f0f;
+  background-color: navy;
 }
 
 .nav >li {
