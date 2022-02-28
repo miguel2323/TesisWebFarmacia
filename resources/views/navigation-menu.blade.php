@@ -3,26 +3,25 @@
 
 @endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-   
-    <!-- Primary Navigation Menu -->
+ <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo -->
+                <!--   Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('home') }}">
+                    
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
-                </div>
+                </div>  
+                   
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-
-
+                  
                     @foreach ($nav_links as $nav_link)
-                        
-                            <x-jet-nav-link href="{{ $nav_link['route']}}" :active="$nav_link['active']">
-                                {{$nav_link['name']}}
+                     <x-jet-nav-link href="{{ $nav_link['route']}}" :active="$nav_link['active']">
+                         {{$nav_link['name']}}
                             </x-jet-nav-link>
                           
                   @endforeach
@@ -252,7 +251,7 @@
             <div class="py-1 border-t border-gray-200" style="color: #a4e62a" >
 
             <x-jet-responsive-nav-link href="{{route('login')}}" :active="request()->routeIs('login')">
-               Loginkkkkkkkkkkkkk
+               Login
             </x-jet-responsive-nav-link>
 
 

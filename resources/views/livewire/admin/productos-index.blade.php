@@ -21,8 +21,9 @@
                         <tr>
                         <td>{{$producto->id}}</td>
                         <td>{{$producto->name}}</td>
+                        <td>{{$producto->precios}}</td>
                         <td with="10px">
-                          <a class="btn btn-primary btn-sm" href="{{route('admin.productos.edit',$producto)}}">Emditar</a>
+                          <a class="btn btn-primary btn-sm" href="{{route('admin.productos.edit',$producto)}}">Editar</a>
                         </td>
                           
                             <td with="10px">

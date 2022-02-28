@@ -23,7 +23,7 @@
        <br>
        <h5 class="text-lg text-gray-500 mt-4">Codigo:{{$producto->codigo}}</h5>
        <br>
-       <h5 class="text-lg text-gray-500 mt-4">Precios:</h5>
+      <h5 class="text-lg text-gray-500 mt-4">Precios:{{$producto->precios}}</h5>
      
    </div>
 {{-- productos contenido relacionados--}}

@@ -5,6 +5,28 @@
         <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/bootstrap.min.css">
         <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/font-awesome.min.css">
         <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/helper.min.css">
+
+         
+
+        {{-- coloanco los demas estilos--}}
+
+
+        <link rel="shortcut icon" href="http://www.lanube.cu.ma/galio/assets/img/favicon.ico"type="image/x-icon">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/bootstrap.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/font-awesome.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/helper.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/plugins.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/style.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/star-rating.css">
+        <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/theme.css">
+       
+
+
+
+
+
+
+
         
 
            <!-- Mobile menu button-->
@@ -35,16 +57,18 @@
            </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             
-            {{--logotipo   --}}
+            {{--logotipo --}}
             <a href="/" class="flex-shrink-0 flex items-center">
             <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
             <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
             </a>
    {{--Menu lg--}}
-          <div class="hidden sm:block sm:ml-6">
+        
+   <div style=" z-index:70 "class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">  
               <ul class="nav">
-                  <li><a href="">Categorias</a>
+                  <li>
+                    <a href="">Categorias</a>
                       <ul>
                         @foreach ($categorias as $categoria)
                          <li><a href="{{route('productos.categoria',$categoria)}}"
@@ -66,7 +90,9 @@
          <!-- Perfiles-->
         <div class="ml-3 relative" x-data="{open: false}">
           <div>
-            <button   x-on:click="open = true" type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+            <button x-on:click="open = true" type="button" class="bg-gray-800 flex text-sm 
+            rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 
+                    focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="sr-only">Open user menu</span>
             <img class="h-8 w-8 rounded-full"src="{{auth()->user()->profile_photo_url}}" alt="">
             </button>
@@ -76,7 +102,7 @@
                mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               --}}
         
-        <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-180 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+        <div x-show="open" style="z-index:70 " x-on:click.away="open = false" class="origin-top-right absolute right-10 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
             <!-- Active: "bg-gray-100", Not Active: "" -->
          <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Tu Perfil</a>
          @can('admin.home')
@@ -106,7 +132,7 @@
   </div>
 
   <!-- Menu Mobil. -->
-  <div class="sm:hidden" id="mobile-menu"  x-show="open" x-on:click.away="open = false" >
+  <div class="sm:hidden" style="z-index:70 " id="mobile-menu"  x-show="open" x-on:click.away="open = false" >
     <div class="px-2 pt-2 pb-3 space-y-1">
       <ul class="nav">
         <li><a href="">Categorias</a>
@@ -122,14 +148,15 @@
                             </div>
                           </div>
 </nav>
-
+ 
+   
 <style type="text/css">
- ul,ol{
+ .nav{
 background-color: #4567;
 color: #ffffff;
 border: none;
-padding: 16px;
-font-size: 18.5px;
+padding: 16px; /* 16px arriba ,abajo derecha hisuierda*/
+font-size: 18.5px;/*tamaño de la letra*/
     list-style: none;
   }
 

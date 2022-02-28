@@ -19,70 +19,35 @@
     </head>
 <body>
 
+<!--inicio de animacion -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img carrusel/Carousel.gif" style="width:2500px;height:550px" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h4>FarmaUdo</h4>
+          <h3><p>.la mejor farmacia del oriente del pais ..</p><h3>
+        </div>
+      </div>
+      
+    </div>
+   </div><!-- cierre de animacion-->
 <!-- page  wrapper start -->
 <div class="page-main-wrapper">
-    <div class="container">
-       
-
-<!--inicio de carrusel-->
-
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img carrusel/21.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img carrusel/20.jpg" class="d-block w-100 " alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="img carrusel/22.jpg" class="d-block w-100 " alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-<!-- cierre  carrousel-->
-
-
-
-
-            <!-- sidebar end -->
-          
-            <!-- product main wrap start -->
+<!-- inicio de contenido-->
+  <div class="container">  
+          <!-- product main wrap start -->
     <div class="col-lg-26 order-1">
                 <!-- product view wrapper area start -->
-         <div class="shop-product-wrapper pt-50">
+         <div class="shop-product-wrapper pt-10">
                 <!-- inicio del artículo del producto -->
             <div class=" shop-product-wrap  grid row">
                 @foreach ($productos as $producto) 
                     <!--  inicio de elemento -->
-            <div  class=" product-item fix  mb-30  col-lg-3 col-md-3 col-sm-6">
+            <div  class=" product-item fix mb-30 col-lg-3 col-md-6 col-sm-6">
             <div class=" mb-8 bg-white shadow-lg overflow-hidden rounded-lg  product-thumb">
-                <article class=" w-full h-80 bg-cover bg-center
-                @if($loop->first) col-span-2 @endif" style="background-image:url(@if($producto->image){{str_replace("localhost","localhost:8000",Storage::url($producto->image->url))}} 
+                <article class=" w-full h-80 bg-cover bg-center 
+                @if($loop->first) col-span-2 @endif"style=" width:250px;height:200px; background-image:url(@if($producto->image){{str_replace("localhost","localhost:8000",Storage::url($producto->image->url))}} 
                         @else https://cdn.pixabay.com/photo/2019/12/18/04/36/blue-4703011__340.jpg @endif)">
                     <div class="product-label">
                         <span>
@@ -94,29 +59,28 @@
             <h4><a href="{{route('productos.show',$producto)}}">
                     Nombre:{{$producto->name}}</a></h4>   
                 <div class="pricebox">
-                    <span class="regular-price">89.97/Bs</span>
-                    
+                    <span class="regular-price">{{$producto->precios}}/Bs</span>
                 </div>
                 </article>  
                 <div class="ratings">
+             </div>
+         </div>
             </div>
-                </div>
-                    </div>
-                    @endforeach
-             
-           <div class="mt-4">
-                {{$productos->links()}}
-            </div>
+                 @endforeach
+        
+               <div class="mt-4">
+                  {{$productos->links()}}
+              </div>
+         
                 <!-- product single list item start -->
                 </div>{{--Fin de Productos--}}
-        
+         
         <!-- start pagination area -->
             
         </div>
             <!-- product main wrap end -->
         </div>
-   
-    </div>
+    </div>  <!-- fin de contenido producto -->
 
 </div>
 <!-- page wrapper end -->
