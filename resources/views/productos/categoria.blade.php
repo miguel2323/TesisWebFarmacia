@@ -6,9 +6,11 @@
       {{-- un for para llamar a todos las categorias--}}
       @foreach ($productos as $producto)
           
-          <article style=" width:450px;height:450px;" class="mb-8 bg-white shadow-lg rounded-lg overflow-hidden">
+          <article  sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px" class="mb-8 bg-white shadow-lg rounded-lg overflow-hidden">
          @if ($producto->image)
-         <img  class="w-full h-80 object-cover object-center" style=" width:250px;height:200px;"
+         <img  class="w-full h-80 object-cover object-center" style=" width:350px;height:300px;"
          src="{{str_replace("localhost","localhost:8000",
              Storage::url($producto->image->url))}}" alt="imegen">
              
@@ -21,15 +23,19 @@
 
         <div class="px-6 py-4">
             <h1 class=" font-bold tect-xl mb-2">
-            <a href="{{route('productos.show',$producto)}}">{{$producto->name}}</a>
+            <a href="{{route('productos.show',$producto)}}">Nombre:{{$producto->name}}</a>
             </h1>
-
+               <div class="font-bold tect-xl mb-2">
+                <strong>Descripcion:</strong><a class="text-gray-700">{!!$producto->description!!}</a>
+               </div>
             <div class="text-gray-700 text-base">
-                {!!$producto->description!!}
+                Cantidad:{!!$producto->cantidad!!}
+             </div>
+            <div class="pricebox">
+                <span class="regular-price">Precios:{!!$producto->precios!!}/Bs</span>
             </div>
-            <div class="text-gray-700 text-base">
-                {!!$producto->precios!!}
-            </div>
+          
+         
         </div>
         
         {{--Para colocar fururas estiquetas--}}

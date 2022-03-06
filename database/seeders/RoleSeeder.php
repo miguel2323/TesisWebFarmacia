@@ -9,11 +9,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends Seeder
-{
-
-
-
-    /**
+{   /**
      * Run the database seeds.
      *
      * @return void
@@ -21,14 +17,10 @@ class RoleSeeder extends Seeder
     public function run()
    {
        $role1 = Role::create(['name'=>'Admin']);
-
        $role2 = Role::create(['name'=>'Blogger']);
-    
        
          Permission::create(['name'=>'admin.home'])->syncRoles([$role1,$role2]);
-
-
-
+         
          Permission::create(['name'=>'admin.usuarios.index'])->syncRoles([$role1]);
          Permission::create(['name'=>'admin.usuarios.edit'])->syncRoles([$role1]);
          Permission::create(['name'=>'admin.usuarios.update'])->syncRoles([$role1]);

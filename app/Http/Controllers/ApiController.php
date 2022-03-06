@@ -34,6 +34,8 @@ class ApiController extends Controller
 
            'name'=>'required',
            'description'=>'required|max255',
+           'cantidad'=>'required',
+            'precios'=>'required',
            'status'=>'required' 
         ]);
 

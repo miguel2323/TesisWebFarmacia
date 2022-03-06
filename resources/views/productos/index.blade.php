@@ -44,7 +44,7 @@
             <div class=" shop-product-wrap  grid row">
                 @foreach ($productos as $producto) 
                     <!--  inicio de elemento -->
-            <div  class=" product-item fix mb-30 col-lg-3 col-md-6 col-sm-6">
+            <div class=" product-item fix mb-30 col-lg-3 col-md-6 col-sm-6">
             <div class=" mb-8 bg-white shadow-lg overflow-hidden rounded-lg  product-thumb">
                 <article class=" w-full h-80 bg-cover bg-center 
                 @if($loop->first) col-span-2 @endif"style=" width:250px;height:200px; background-image:url(@if($producto->image){{str_replace("localhost","localhost:8000",Storage::url($producto->image->url))}} 

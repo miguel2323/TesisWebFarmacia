@@ -29,10 +29,10 @@
 
         
         <div class="form-group">
-            {!! Form::label('precio','Precios:')!!}
-            {!! Form::text('precio', null, ['class'=>'form-control','placeholder'=>'Ingrese el Precio del producto']) !!}
+            {!! Form::label('precios','Precios:')!!}
+            {!! Form::text('precios', null, ['class'=>'form-control','placeholder'=>'Ingrese el Precio del producto']) !!}
           
-            @error('precio')
+            @error('precios')
             <small class="text-danger">{{$message}}</small>
             @enderror
         
@@ -91,10 +91,10 @@
           </div>
 
         <div class="form-group">
-            {!! Form::label('codigo','Codigo:')!!}
-            {!! Form::text('codigo', null, ['class'=>'form-control','placeholder'=>'Ingrese el codigo del producto']) !!}
+            {!! Form::label('cantidad','Cantidad:')!!}
+            {!! Form::text('cantidad', null, ['class'=>'form-control','placeholder'=>'Ingrese el codigo del producto']) !!}
           
-            @error('codigo')
+            @error('cantidad')
             <small class="text-danger">{{$message}}</small>
             @enderror
         

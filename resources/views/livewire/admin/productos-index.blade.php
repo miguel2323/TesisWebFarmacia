@@ -11,8 +11,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Cantidad</th>
                     <th>Precio</th>
-                    <th colspan="2"></th>
+                    <th colspan="4"></th>
                 </tr>
             </thead>
 
@@ -21,6 +22,7 @@
                         <tr>
                         <td>{{$producto->id}}</td>
                         <td>{{$producto->name}}</td>
+                        <td>{{$producto->cantidad}}</td>
                         <td>{{$producto->precios}}</td>
                         <td with="10px">
                           <a class="btn btn-primary btn-sm" href="{{route('admin.productos.edit',$producto)}}">Editar</a>

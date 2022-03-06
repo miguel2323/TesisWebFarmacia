@@ -30,9 +30,8 @@ class ProductoFactory extends Factory
             'name'=>$name,
              'slug'=>Str::slug($name),
               'description'=>$this->faker->paragraph(),   
-               'codigo'=> Str::random(10),
-               'precio'=> Str::random(10),
-                'status'=> $this->faker->randomElement([1,2]),
+               'status'=> $this->faker->randomElement([1,2]),
+                'statusAct_DesT'=>$this->faker->randomElement([1,2]),
                  'categoria_id'=>Categoria::all()->random()->id,
                   'user_id'=>User::all()->random()->id
         ];
