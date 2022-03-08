@@ -1,42 +1,49 @@
-      
-
-    <div class="form-group">
+ <div class="form-group">
             {!! Form::label('name','Nombre:')!!}
             {!! Form::text('name',null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre del producto']) !!}
            
             @error('name')
             <small class="text-danger">{{$message}}</small>
             @enderror
-    </div>
+     </div>
 
-         <div class="form-group">
-             {!! Form::label('slug','Slug')!!}
-             {!! Form::text('slug',null, ['class'=>'form-control','placeholder'=>'Ingrese el slug del producto','readonly']) !!}
-            
-             @error('slug')
-             <small class="text-danger">{{$message}}</small>
-             @enderror
-         </div> 
-        
-          <div class="form-group">
-            {!! Form::label('categoria_id','Categoria:')!!}
-            {!! Form::select('categoria_id',$categorias, null, ['class'=>'form-control']) !!}
-          
-            @error('categoria_id')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
-        </div>
-
-        
-        <div class="form-group">
-            {!! Form::label('precios','Precios:')!!}
-            {!! Form::text('precios', null, ['class'=>'form-control','placeholder'=>'Ingrese el Precio del producto']) !!}
-          
-            @error('precios')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
-        
-        </div>
+            <div class="form-group">
+                {!! Form::label('slug','Slug')!!}
+                {!! Form::text('slug',null, ['class'=>'form-control','placeholder'=>'Ingrese el slug del producto','readonly']) !!}
+                
+                @error('slug')
+                <small class="text-danger">{{$message}}</small>
+                @enderror
+            </div> 
+                        
+                        <div class="form-group">
+                            {!! Form::label('categoria_id','Categoria:')!!}
+                            {!! Form::select('categoria_id',$categorias, null, ['class'=>'form-control']) !!}
+                        
+                                @error('categoria_id')
+                                  <small class="text-danger">{{$message}}</small>
+                                     @enderror
+                                    </div>
+                                                        
+                                <div class="form-group">
+                                    {!! Form::label('cantidad','Cantidad:')!!}
+                                    {!! Form::text('cantidad', null, ['class'=>'form-control','placeholder'=>'cantidad del producto']) !!}
+                                
+                                    @error('cantidad')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                
+                                </div>
+                                                
+                                                <div class="form-group">
+                                                    {!! Form::label('precios','Precios:')!!}
+                                                    {!! Form::text('precios', null, ['class'=>'form-control','placeholder'=>'Ingrese el Precio del producto']) !!}
+                                                
+                                                    @error('precios')
+                                                    <small class="text-danger">{{$message}}</small>
+                                                    @enderror
+                                                
+                                                </div>
 
                   
         <div class="form-group">
@@ -90,15 +97,6 @@
             </div>
           </div>
 
-        <div class="form-group">
-            {!! Form::label('cantidad','Cantidad:')!!}
-            {!! Form::text('cantidad', null, ['class'=>'form-control','placeholder'=>'Ingrese el codigo del producto']) !!}
-          
-            @error('cantidad')
-            <small class="text-danger">{{$message}}</small>
-            @enderror
-        
-        </div>
         <div class="form-group">
             {!! Form::label('description','Descripcion del producto:')!!}
             {!! Form::textarea('description',null,['form-control']) !!}

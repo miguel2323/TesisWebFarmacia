@@ -21,6 +21,7 @@ class CreateProductosTable extends Migration
             $table->decimal('precios',12,2)->nullable()->default(0);
             $table->Integer('cantidad')->default(0);//cantidad  de productos
             $table->enum('status',[1,2])->default(1);//borrador o publicado
+        
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('categoria_id');
     

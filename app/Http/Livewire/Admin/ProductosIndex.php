@@ -25,8 +25,7 @@ class ProductosIndex extends Component
         ->where('name','LIKE', '%' . $this->search . '%') 
         ->latest('id')
         ->paginate();
-           
-        return view('livewire.admin.productos-index',compact('productos'));
+           return view('livewire.admin.productos-index',compact('productos'));
       }
 
 

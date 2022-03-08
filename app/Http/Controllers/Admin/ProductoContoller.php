@@ -30,15 +30,17 @@ public function __construct(){
     }
 
     public function create()
-    {
+    { 
          $categorias = Categoria::pluck('name','id');
         return view('admin.productos.create', compact('categorias'));
     }
 
     public function store(ProductoRequest $request)
     {
-      $producto =Producto::create($request->all());
 
+   $producto =Producto::create($request->all());
+  
+   
     //  return $request->all('file')['file'];
        
       if ($request->file('file')) {

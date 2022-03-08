@@ -31,8 +31,7 @@ class ProductoFactory extends Factory
              'slug'=>Str::slug($name),
               'description'=>$this->faker->paragraph(),   
                'status'=> $this->faker->randomElement([1,2]),
-                'statusAct_DesT'=>$this->faker->randomElement([1,2]),
-                 'categoria_id'=>Categoria::all()->random()->id,
+                'categoria_id'=>Categoria::all()->random()->id,
                   'user_id'=>User::all()->random()->id
         ];
     }

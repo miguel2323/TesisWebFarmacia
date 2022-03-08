@@ -20,9 +20,9 @@
        <div class="text-base text-gray-500 mt-4">
          <p><strong>Descripcion:</strong>{!!$producto->description!!}</p>
        </div>
-      <h5 class="text-lg text-gray-500 mt-4"><strong>Precios:{!!$producto->precios!!}</strong></h5>
+      <h5 class="text-lg text-gray-500 mt-4"><strong>Precios:{{$producto->precios}}</strong></h5>
       
-      <h5 class="text-lg text-gray-500 mt-4"><strong>Cantidad:{!!$producto->cantidad!!}</strong></h5>
+      <h5 class="text-lg text-gray-500 mt-4"><strong>Cantidad:{{$producto->cantidad}}</strong></h5>
      
    </div>
 {{-- productos relacionados--}}

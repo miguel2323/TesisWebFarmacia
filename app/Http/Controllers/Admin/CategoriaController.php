@@ -32,7 +32,9 @@ public function __construct(){
 
     public function store(Request $request)
     {
-        //validaciones de los campos 
+     //$echo('store categoria');
+      
+      //validaciones de los campos 
         $request->validate([
           'name'=>'required',
           'slug'=>'required|unique:categorias'

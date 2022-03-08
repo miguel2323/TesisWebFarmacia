@@ -26,13 +26,13 @@
             <a href="{{route('productos.show',$producto)}}">Nombre:{{$producto->name}}</a>
             </h1>
                <div class="font-bold tect-xl mb-2">
-                <strong>Descripcion:</strong><a class="text-gray-700">{!!$producto->description!!}</a>
+                <strong>Descripcion:</strong><a class="text-gray-700">{{$producto->description}}</a>
                </div>
             <div class="text-gray-700 text-base">
-                Cantidad:{!!$producto->cantidad!!}
+                Cantidad:{{$producto->cantidad}}
              </div>
             <div class="pricebox">
-                <span class="regular-price">Precios:{!!$producto->precios!!}/Bs</span>
+                <span class="regular-price">Precios:{{$producto->precios}}/Bs</span>
             </div>
           
          

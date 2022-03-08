@@ -54,7 +54,8 @@ class ProductoRequest extends FormRequest
 
               $rules =array_merge($rules,[
                'categoria_id'=>'required',
-               'codigo'=>'required',
+               'cantidad'=>'required',
+               'precios'=>'required',
                'description'=>'required'
                ]);
           }

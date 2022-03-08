@@ -54,19 +54,23 @@ class ProductController extends Controller
  
      public function update(Request $request, Producto $producto)
      {//creando las validaciones
- 
+      $echo('error');
          $request->validate([ 
            'nombre'=> 'required',
              'descripcion'=>'required',
+            'cantidad'=>'required',
+             'precios'=>'required',
                'categoria'=> 'required'
              ]);
              $producto->nombre = $request->nombre;
-             $producto->descrpcion = $request->descripcion;
-             $producto->categoria= $request->categoria;
-             $producto->save();
+             $producto->descripcion = $request->descripcion;
+             $producto->cantidad = $request->cantidad;
+            $producto->precios = $request->precios;
+             $producto->categoria = $request->categoria;
+           //  $producto->save();
            //actualizar registro por adsinacion masiva
            //$articulo->update($request->all());// metodo simplificado me da error tambien
-           return view('productos.show',compact('producto'));
+           return $echo('Entrando a update');//view('productos.show',compact('producto'));
      }
  
      public function destroy(Producto $producto){
