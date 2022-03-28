@@ -17,13 +17,17 @@
     <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/star-rating.css">
     <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/theme.css">
     </head>
+
+
+
+    
 <body>
 
 <!--inicio de animacion -->
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="img carrusel/Carousel.gif" style="width:2500px;height:550px" alt="...">
+        <img src="img carrusel/Carousel.gif"  style=" width:2000px;height:400px;" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h4>FarmaUdo</h4>
           <h3><p>.la mejor farmacia del oriente del pais ..</p><h3>
@@ -130,10 +134,10 @@
     
     <!-- Quick view modal end -->
 
-    <!-- Scroll to top start -->
+    <!-- Scroll to top start 
     <div class="scroll-top not-visible">
         <i class="fa fa-angle-up"></i>
-    </div>
+    </div>-->
     <!-- Scroll to Top End -->
 </body>
 
