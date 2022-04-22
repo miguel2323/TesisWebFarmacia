@@ -13,9 +13,7 @@ class ProductoRequest extends FormRequest
      */
     public function authorize()
     {
-
-      return true;
-      
+  
          /* if ($this->user_id== auth()->user()->id) {
             
             return true;
@@ -24,6 +22,10 @@ class ProductoRequest extends FormRequest
               return false; 
           }
 */
+    
+
+      return true;
+    
         
     }
 

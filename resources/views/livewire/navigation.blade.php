@@ -19,14 +19,6 @@
         <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/style.css">
         <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/star-rating.css">
         <link media="all" type="text/css" rel="stylesheet" href="./Laravel_files/theme.css">
-       
-
-
-
-
-
-
-
         
 
            <!-- Mobile menu button-->

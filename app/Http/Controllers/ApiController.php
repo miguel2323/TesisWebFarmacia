@@ -52,9 +52,12 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+      
+        $producto= Producto::findOrFail($id);
+        return\response($producto);
 
+
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -64,7 +67,9 @@ class ApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+     $producto= Producto::findOrFile($id)->update($request->all());
+        return\response($producto);
     }
 
     /**
@@ -75,6 +80,7 @@ class ApiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $producto::destroy($id);
+        return\response( content:"el producto con el id: ${id}ha sido eliminado correctamente");
     }
 }
